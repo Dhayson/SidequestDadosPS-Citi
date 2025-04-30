@@ -3,12 +3,8 @@ import matplotlib.pyplot as plt
 
 def visualizar_aprovacao(base: pandas.DataFrame):
     valores = base["aprovado"].value_counts()
-    valor_total = valores.sum()
     valor_nao = valores["Não"]
     valor_sim = valores["Sim"]
-    # Converter em portentagem
-    frac_nao = valor_nao / valor_total
-    frac_sim = valor_sim / valor_total
     # Gerar gráfico de pizza
     fig, ax = plt.subplots(figsize=(6, 6))
     wedges, texts, autotexts = ax.pie(
@@ -39,12 +35,8 @@ def visualizar_aprovacao(base: pandas.DataFrame):
 
 def visualizar_distribuicao_sexo(base: pandas.DataFrame):
     valores = base["sexo"].value_counts()
-    valor_total = valores.sum()
     valor_masculino = valores["Masculino"]
     valor_feminino = valores["Feminino"]
-    # Converter em portentagem
-    frac_masculino = valor_masculino / valor_total
-    frac_feminino = valor_feminino / valor_total
     # Gerar gráfico de pizza
     fig, ax = plt.subplots(figsize=(8, 6))
     wedges, texts, autotexts = ax.pie(
