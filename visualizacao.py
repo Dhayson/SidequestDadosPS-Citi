@@ -95,7 +95,7 @@ def visualizar_rank_frequencia(base: pandas.DataFrame):
     # Gráfico de barras
     plt.figure(figsize=(8, 5))
     plt.bar(base_freq['nome'], base_freq['frequencia'])
-    plt.ylabel('Média')
+    plt.ylabel('Frequência (%)')
     plt.title('Ranking de Frequência')
     plt.ylim(0, 110)
     plt.xticks(rotation=45, ha='right')
